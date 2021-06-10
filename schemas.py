@@ -32,6 +32,7 @@ class ModalidadeEnum(IntEnum):
 
 class PlanoTrabalhoSchema(BaseModel):
     cod_plano: str = Field(title="código do plano")
+    situacao: Optional[str] = Field(title="situação do plano")
     matricula_siape: int = Field(title="Matrícula SIAPE")
     cpf: str = Field(
         title="CPF",
@@ -153,6 +154,7 @@ class PlanoTrabalhoUpdateSchema(BaseModel):
     """Esquema para atualização do plano de trabalho. Na atualização,
     todos os campos são opcionais, exceto cod_plano."""
     cod_plano: str
+    situacao: Optional[str]
     matricula_siape: Optional[int]
     cpf: Optional[str]
     nome_participante: Optional[str]
